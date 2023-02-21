@@ -2,6 +2,7 @@ import React from "react";
 import "./Item.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import ContactForm from "../contactForm/ContactForm";
 
 const Item = (props) => {
   const {title, description, button, id} = props;
@@ -21,11 +22,7 @@ const Item = (props) => {
           <button className="btn" onClick={handleClick}>{button} &#8594;</button>
         }
       </div>
-      <div className="contact" style={{display: isDisplay ? "block" : "none"}}>
-        <div className="modal">Здесь будет форма для связи<span className="close" onClick={handleClick}>&#10008;</span></div>
-        <div class="modal-overlay"></div>
-      </div>
-      
+      <ContactForm style={{display: isDisplay ? "block" : "none"}} onClick={handleClick}/>
     </div>
   )
 }
